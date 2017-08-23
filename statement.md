@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import static java.util.stream.Collectors.joining;
 
 public class Main {
 
@@ -30,6 +31,9 @@ try (BufferedReader reader = Files.newBufferedReader(Paths.get("file.txt"), Stan
         System.out.println(line);
     }
 }
+
+//Method 3:
+System.out.println(Files.newBufferedReader(Paths.get("file.txt"), StandardCharsets.UTF_8).lines().collect(joining("\n")));
 
 //{ autofold
 }
